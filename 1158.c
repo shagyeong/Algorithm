@@ -34,23 +34,22 @@ int main(void){
     for(j = 0; j < k; j++){
         buf = buf->next;
     }
-    printf("<%d, ", buf->value);
+    printf("<%d", buf->value);
     pop(buf);
 
 
-    for(int i = 2; i <= n - 1; i++){
+    for(int i = 2; i <= n; i++){
         for(j = 0; j < k; j++){
             buf = buf->next;
         }
-        printf("%d, ", buf->value);
+        printf(", %d", buf->value);
         pop(buf);
     }
 
     for(j = 0; j < k; j++){
         buf = buf->next;
     }
-    printf("%d>", buf->value);
-    pop(buf);
+    printf(">");
 }
 void push(struct queue* q, int i){
     struct node* newnode = (struct node*)malloc(sizeof(struct node));
