@@ -1,5 +1,4 @@
-//10845: 큐
-//알고리즘 분류: 자료 구조, 큐
+//10845: 큐(자료 구조, 큐)
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>

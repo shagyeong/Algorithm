@@ -1,5 +1,4 @@
-//1016: 제곱 ㄴㄴ 수
-//알고리즘 분류: 수학, 정수론, 소수 판정, 에라토스테네스의 체
+//1016: 제곱 ㄴㄴ 수(수학, 정수론, 소수 판정, 에라토스테네스의 체)
 #include<stdio.h>
 #include<math.h>
 void sieve(int min, int max);

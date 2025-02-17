@@ -1,5 +1,4 @@
-//10828: 스택
-//알고리즘 분류: 구현, 자료 구조, 스택
+//10828: 스택(구현, 자료 구조, 스택)
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>

@@ -1,5 +1,4 @@
-//2750: 수 정렬하기
-//알고리즘 분류: 구현, 정렬
+//2750: 수 정렬하기(구현, 정렬)
 #include<stdio.h>
 int main(void){
     int i; int j; int buf;

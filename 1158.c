@@ -1,5 +1,4 @@
-//1158: 요세푸스 문제
-//알고리즘 분류: 구현, 자료 구조, 큐
+//1158: 요세푸스 문제(구현, 자료 구조, 큐)
 #include<stdio.h>
 #include<stdlib.h>
 struct node{

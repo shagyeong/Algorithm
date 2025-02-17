@@ -1,5 +1,4 @@
-//2751: 수 정렬하기 2
-//알고리즘 분류: 정렬
+//2751: 수 정렬하기 2(정렬)
 #include<stdio.h>
 void mergesort(int arr[], int l, int r);
 void merge(int arr[], int l, int m, int r);

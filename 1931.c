@@ -1,5 +1,4 @@
-//1931: 회의실 배정
-//알고리즘 분류: 그리디 알고리즘, 정렬
+//1931: 회의실 배정(그리디 알고리즘, 정렬)
 #include<stdio.h>
 struct meeting{
     int start;

@@ -1,5 +1,4 @@
-//1822: 차집합
-//알고리즘 분류: 자료 구조, 정렬, 해시를 사용한 집합과 맵, 트리를 사용한 집합과 맵
+//1822: 차집합(자료 구조, 정렬, 해시를 사용한 집합과 맵, 트리를 사용한 집합과 맵)
 #include<stdio.h>
 void mergesort(int arr[], int l, int r);
 void merge(int arr[], int l, int m, int r);

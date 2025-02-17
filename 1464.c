@@ -1,5 +1,4 @@
-//1464: 뒤집기 3
-//알고리즘 분류: 자료 구조, 그리디 알고리즘, 덱
+//1464: 뒤집기 3(자료 구조, 그리디 알고리즘, 덱)
 #include<stdio.h>
 int compare(char* s1, char* s2, int len);
 int strlength(const char* s);

@@ -1,5 +1,4 @@
-//1929: 소수 구하기
-//알고리즘 분류: 수학, 정수론, 소수 판정, 에라토스테네스의 체
+//1929: 소수 구하기(수학, 정수론, 소수 판정, 에라토스테네스의 체)
 #include<stdio.h>
 void sieve(int min, int max);
 int main(void){

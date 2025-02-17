@@ -1,5 +1,4 @@
-//1377: 버블 소트
-//알고리즘 분류: 정렬
+//1377: 버블 소트(정렬)
 #include<stdio.h>
 void mergesort(int arr[][2], int l, int r);
 void merge(int arr[][2], int l, int m, int r);

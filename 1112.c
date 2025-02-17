@@ -1,5 +1,4 @@
-//1112: 진법 변환
-//알고리즘 분류: 수학, 구현, 정수론
+//1112: 진법 변환(수학, 구현, 정수론)
 #include<stdio.h>
 int main(void){
     int n, b; scanf("%d %d", &n, &b);
