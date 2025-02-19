@@ -1,7 +1,8 @@
+//1260: DFS와 BFS(그래프 이론, 그래프 탐색, 너비 우선 탐색, 깊이 우선 탐색)
 #include<stdio.h>
 #include<stdlib.h>
 
-#define NODEMAX 10
+#define NODEMAX 1001
 #define UNVISITED -1
 #define PROGRESS 0
 #define ALLDONE 1
@@ -14,27 +15,28 @@ struct graph{
     struct node* adjs[NODEMAX];
     char visited[NODEMAX];
 };
-void Graph(struct graph* G);
+void Graph(struct graph* G, unsigned short n);
 void insert(struct graph* G, unsigned short u, unsigned short v);
-void VISITINIT(struct graph* G){for(unsigned short i = 0; i < NODEMAX; i++){G->visited[i] = UNVISITED;}}
+void VISITINIT(struct graph* G, unsigned short n){for(unsigned short i = 0; i <= n; i++){G->visited[i] = UNVISITED;}}
 void DFS(struct graph* G, unsigned short s);    //s(start): 시작 노드
 void BFS(struct graph* G, unsigned short s);
-void printgraph(struct graph* G);
 
 int main(void){
+    //그래프 세팅
+    unsigned short n, m, v; scanf("%hd %hd %hd", &n, &m, &v);
+    unsigned short u, w;
     struct graph* G = (struct graph*)malloc(sizeof(struct graph));
-    Graph(G);
-    insert(G, 5, 4);
-    insert(G, 5, 2);
-    insert(G, 1, 2);
-    insert(G, 3, 4);
-    insert(G, 3, 1);
-    printgraph(G);
-    DFS(G, 3); printf("\n");VISITINIT(G);
-    BFS(G, 3); printf("\n");VISITINIT(G);
+    Graph(G, n);
+    for(int i = 0; i < m; i++){
+        scanf("%hd %hd", &u, &w);
+        insert(G, u, w);
+    }
+    //정답 출력
+    DFS(G, v);printf("\n");VISITINIT(G, n);
+    BFS(G, v);printf("\n");
 }
-void Graph(struct graph* G){
-    for(unsigned short i = 0; i < NODEMAX; i++){
+void Graph(struct graph* G, unsigned short n){
+    for(unsigned short i = 0; i <= n; i++){
         //노드 세팅  
         struct node* newnode = (struct node*)malloc(sizeof(struct node));
         newnode->value = i;
@@ -124,17 +126,5 @@ void BFS(struct graph* G, unsigned short s){
             buf = L[0]; if(buf == NULL){break;}
             i = 0; j = 0;
         }
-    }
-}
-void printgraph(struct graph* G){
-    struct node* buf = (struct node*)malloc(sizeof(struct node));
-    for(unsigned short i = 0; i < NODEMAX; i++){
-        buf = G->adjs[i];
-        printf("node %hd: ", buf->value);
-        buf = buf->next;
-        while(buf != NULL){
-            printf("%hd ", buf->value);
-            buf = buf->next;
-        }printf("\n");
     }
 }
