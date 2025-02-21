@@ -1,1 +1,103 @@
-ABCDEFGH0ABCDEFG00ABCDEF‡∏JÍÓu000ABCDE0000ABCD00000ABC000000AB	2?÷ùb0000000A@ ?÷ùb
+0.500000, 0.500000
+0.500000, 0.500000
+comb: 16 1
+
+comb: 16 4
+comb: 15 3
+comb: 14 2
+comb: 13 1
+
+comb: 16 6
+comb: 15 5
+comb: 14 4
+comb: 13 3
+comb: 12 2
+comb: 11 1
+
+comb: 16 8
+comb: 15 7
+comb: 14 6
+comb: 13 5
+comb: 12 4
+comb: 11 3
+comb: 10 2
+comb: 9 1
+
+comb: 16 9
+comb: 15 8
+comb: 14 7
+comb: 13 6
+comb: 12 5
+comb: 11 4
+comb: 10 3
+comb: 9 2
+comb: 8 1
+
+comb: 16 10
+comb: 15 9
+comb: 14 8
+comb: 13 7
+comb: 12 6
+comb: 11 5
+comb: 10 4
+comb: 9 3
+comb: 8 2
+comb: 7 1
+comb: 16 12
+comb: 15 11
+comb: 14 10
+comb: 13 9
+comb: 12 8
+comb: 11 7
+comb: 10 6
+comb: 9 5
+comb: 8 4
+comb: 7 3
+comb: 6 2
+comb: 5 1
+comb: 16 14
+comb: 15 13
+comb: 14 12
+comb: 13 11
+comb: 12 10
+comb: 11 9
+comb: 10 8
+comb: 9 7
+comb: 8 6
+comb: 7 5
+comb: 6 4
+comb: 5 3
+comb: 4 2
+comb: 3 1
+comb: 16 15
+comb: 15 14
+comb: 14 13
+comb: 13 12
+comb: 12 11
+comb: 11 10
+comb: 10 9
+comb: 9 8
+comb: 8 7
+comb: 7 6
+comb: 6 5
+comb: 5 4
+comb: 4 3
+comb: 3 2
+comb: 2 1
+comb: 16 16
+comb: 15 15
+comb: 14 14
+comb: 13 13
+comb: 12 12
+comb: 11 11
+comb: 10 10
+comb: 9 9
+comb: 8 8
+comb: 7 7
+comb: 6 6
+comb: 5 5
+comb: 4 4
+comb: 3 3
+comb: 2 2
+comb: 1 1
+-7947.581158
