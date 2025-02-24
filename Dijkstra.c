@@ -1,8 +1,7 @@
-//1238: 파티(그래프 이론, 최단 경로, 데이크스트라)
 #include<stdio.h>
 #include<stdlib.h>
 
-#define NODEMAX 1001
+#define NODEMAX 10
 #define INF 32767   //short 최대값
 #define NOTSURE -1
 #define ALLDONE 1
@@ -17,39 +16,43 @@ struct graph{
     short distance[NODEMAX];
     char visited[NODEMAX];      //노드 마크
 };
-void Graph(struct graph* G, short n);
-void visitinit(struct graph* G, short n);
-void distanceinit(struct graph* G, short n);
+void Graph(struct graph* G);
+void visitinit(struct graph* G);
+void dijkstra(struct graph* G, short s);
+
 void insert(struct graph* G, short u, short v, short w);
-void dijkstra(struct graph* G, short s, short n);
+void distanceinit(struct graph* G);
+void printgraph(struct graph* G);
 
 int main(void){
-    short i, j, k;
-    short u, v, w;
-    short n, m, x; scanf("%hd %hd %hd", &n, &m, &x);
+    struct graph* G = (struct graph*)malloc(sizeof(struct graph));
+    Graph(G);
+    //insert(G, 0, 1, 1);
+    //insert(G, 0, 4, 25);
+    //insert(G, 1, 2, 1);
+    //insert(G, 1, 4, 22);
+    //insert(G, 2, 3, 4);
+    //insert(G, 3, 4, 20);
 
-    short ans[n + 1]; for(i = 1; i <= n; i++){ans[i] = 0;}
-        
-    struct graph* G1 = (struct graph*)malloc(sizeof(struct graph));
-    struct graph* G2 = (struct graph*)malloc(sizeof(struct graph));
-    Graph(G1, n);
-    Graph(G2, n);
+    insert(G, 1, 2, 4);
+    insert(G, 1, 3, 2);
+    insert(G, 1, 4, 7);
+    insert(G, 2, 1, 1);
+    insert(G, 2, 3, 5);
+    insert(G, 3, 1, 2);
+    insert(G, 3, 4, 4); 
+    insert(G, 4, 2, 3);
     
-    for(i = 0; i < m; i++){
-        scanf("%hd %hd %hd", &u, &v, &w);
-        insert(G1, u, v, w);
-        insert(G2, v, u, w);
+    printgraph(G);
+
+    dijkstra(G, 1);
+
+    for(short i = 0; i < NODEMAX; i++){
+        printf("%hd distance: %hd\n", i, G->distance[i]);
     }
-    dijkstra(G1, x, n); for(i = 1; i <= n; i++){ans[i] += G1->distance[i];}
-    dijkstra(G2, x, n); for(i = 1; i <= n; i++){ans[i] += G2->distance[i];}
-    //정답 출력
-    short max = ans[1];
-    i = 1;
-    while(i <= n){max = (ans[i] > max)?ans[i]:max; i++;}
-    printf("%hd", max);
 }
-void Graph(struct graph* G, short n){
-    for(short i = 1; i <= n; i++){
+void Graph(struct graph* G){
+    for(short i = 0; i < NODEMAX; i++){
         //노드 세팅
         struct node* newnode =(struct node*)malloc(sizeof(struct node));
         newnode->value = i;
@@ -61,11 +64,11 @@ void Graph(struct graph* G, short n){
         G->visited[i] = NOTSURE;
     }
 }
-void distanceinit(struct graph* G, short n){
-    for(short i = 1; i <= n; i++){G->distance[i] = (short)INF;}   
+void distanceinit(struct graph* G){
+    for(short i = 0; i < NODEMAX; i++){G->distance[i] = (short)INF;}   
 }
-void visitinit(struct graph* G, short n){
-    for(short i = 1; i <= n; i++){G->visited[i] = NOTSURE;}   
+void visitinit(struct graph* G){
+    for(short i =0; i < NODEMAX; i++){G->visited[i] = NOTSURE;}   
 }
 void insert(struct graph* G, short u, short v, short w){
     struct node* buf = (struct node*)malloc(sizeof(struct node));
@@ -83,16 +86,16 @@ void insert(struct graph* G, short u, short v, short w){
     //while((buf->next != NULL) && (w > buf->next->weight)){buf = buf->next;}
     //U->next = buf->next; buf->next = U;
 }
-void dijkstra(struct graph* G, short s, short n){
+void dijkstra(struct graph* G, short s){
     short ibuf;
     short wbuf;
     G->distance[s] = 0;
     struct node* buf = (struct node*)malloc(sizeof(struct node));
     
-    for(short i = 1; i <= n; i++){
-        ibuf = 1;
+    for(short i = 0; i < NODEMAX; i++){
+        ibuf = 0;
         wbuf = 32767;
-        for(short j = 1; j <= n; j++){
+        for(short j = 0; j < NODEMAX; j++){
             if(G->distance[j] < wbuf && G->visited[j] == NOTSURE){
                 wbuf = G->distance[j];
                 ibuf = j;
@@ -109,17 +112,15 @@ void dijkstra(struct graph* G, short s, short n){
         G->visited[ibuf] = ALLDONE;
     }
 }
-
-// void printgraph(struct graph* G, short n);
-// void printgraph(struct graph* G, short n){
-//     struct node* buf = (struct node*)malloc(sizeof(struct node));
-//     for(short i = 1; i <= n; i++){
-//         buf = G->adjs[i];
-//         printf("node %hd's adjs: \n", buf->value);
-//         buf = buf->next;
-//         while(buf != NULL){
-//             printf("node %hd: weight %hd\n", buf->value, buf->weight);
-//             buf = buf->next;
-//         }printf("\n");
-//     }
-// }
+void printgraph(struct graph* G){
+    struct node* buf = (struct node*)malloc(sizeof(struct node));
+    for(short i = 0; i < NODEMAX; i++){
+        buf = G->adjs[i];
+        printf("node %hd's adjs: \n", buf->value);
+        buf = buf->next;
+        while(buf != NULL){
+            printf("node %hd: weight %hd\n", buf->value, buf->weight);
+            buf = buf->next;
+        }printf("\n");
+    }
+}
