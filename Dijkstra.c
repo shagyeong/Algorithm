@@ -101,7 +101,6 @@ void dijkstra(struct graph* G, short s){
                 ibuf = j;
             }
         }
-
         buf = G->adjs[ibuf]->next;
         while(buf != NULL){
             if((wbuf + buf->weight > 0) && (wbuf + buf->weight < G->distance[buf->value])){
