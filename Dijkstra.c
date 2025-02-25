@@ -92,6 +92,10 @@ void dijkstra(struct graph* G, short s){
     G->distance[s] = 0;
     struct node* buf = (struct node*)malloc(sizeof(struct node));
     
+    //while NOTSURE nodes exist
+    //d[u]가 최소인 u를 선택
+    //v for d[u]'s adjs
+    //d[v] <- min(dv], d[u] + w(u, v))
     for(short i = 0; i < NODEMAX; i++){
         ibuf = 0;
         wbuf = 32767;
